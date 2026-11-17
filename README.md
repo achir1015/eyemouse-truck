@@ -26,6 +26,7 @@ python -I tools/gen_music.py         # 20 首車內音樂
 python -I tools/gen_sfx.py           # 音效
 python -I tools/gen_voice.py         # 語音
 bash tools/build_win.sh              # Windows 安裝程式＋免安裝 zip → ../build/release
+bash platform/macos/build-dmg.sh     # 在 Mac 上（專案放 ~/Developer/eyemouse-truck）→ ~/Developer/eyemouse-truck-build/EyeMouseTruck-macOS.dmg
 ```
 
 測試：`Godot --path . -- --test --screen=selftest`；截圖 `-- --test --screen=drive --map=taipei --vehicle=car --view=chase --shot=畫面.png`。
