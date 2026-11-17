@@ -1,6 +1,7 @@
 # 眼動鼠之寶島卡車
 
 ![駕駛座視角](docs/shots/cabin.jpg)
+<img width="1899" height="992" alt="image" src="https://github.com/user-attachments/assets/74ed37bb-439a-42d2-9fec-4a684986a4a2" />
 
 用眼睛開卡車的 **3D 寫實駕駛遊戲**（Godot 4.7）：坐在駕駛座裡跑遍台灣，小柯機器人陪你學開車。
 
