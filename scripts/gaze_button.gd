@@ -11,6 +11,8 @@ var icon := ""                    # 用文字符號當圖示
 var color := Color(0.16, 0.42, 0.78)
 var hold := false
 var active := false               # hold 模式：目前正在作用
+var _touches := {}                # hold 模式：按在這顆鍵上的手指（多指可同時踩油門＋轉向）
+var _mouse_down := false
 var dwell_scale := 1.0
 var enabled := true
 var selected := false             # 切換型按鈕的「開」狀態
@@ -38,7 +40,14 @@ func _gui_input(e: InputEvent) -> void:
 		return
 	if (e is InputEventMouseButton and e.button_index == MOUSE_BUTTON_LEFT) or e is InputEventScreenTouch:
 		if hold:
-			active = e.pressed
+			if e is InputEventScreenTouch:
+				if e.pressed:
+					_touches[e.index] = true
+				else:
+					_touches.erase(e.index)
+			elif not Gaze.touch_mode:
+				_mouse_down = e.pressed
+			active = _mouse_down or not _touches.is_empty()
 			queue_redraw()
 		elif e.pressed:
 			_fire()
@@ -73,7 +82,9 @@ func _process(dt: float) -> void:
 		else:
 			_dwell = 0.0
 		var was := active
-		if Gaze.source == "eyemouse" or Gaze.bot_point != null or App.settings.control == "eye":
+		if Gaze.touch_mode:
+			active = not _touches.is_empty() or _mouse_down
+		elif Gaze.source == "eyemouse" or Gaze.bot_point != null or App.settings.control == "eye":
 			if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 				active = g_active
 		if was != active:

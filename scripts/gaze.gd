@@ -206,6 +206,8 @@ func _process(delta: float) -> void:
 
 func status_text() -> String:
 	if OS.has_feature("mobile"):
+		if OS.get_name() == "Android":
+			return "觸控操作：按住畫面下方的油門、煞車、左右鍵開車"
 		return "觸控操作；iPad 可用「輔助使用 › 眼動追蹤」看著停留"
 	if OS.has_feature("web"):
 		return "線上版：用滑鼠停留、觸控，或電腦的眼控軟體操作"

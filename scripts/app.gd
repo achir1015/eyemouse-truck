@@ -51,6 +51,7 @@ func _ready() -> void:
 		settings.auto_eyemouse = false
 	if OS.has_feature("mobile"):
 		settings.quality = "low"
+		settings.control = "eye"   # 手機沒有鍵盤：用畫面上的油門、煞車、方向鍵開車
 
 
 ## 手機瀏海／圓角的安全邊界（視窗座標，左上右下）；電腦與網頁都是 0
