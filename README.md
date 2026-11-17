@@ -3,6 +3,10 @@
 ![駕駛座視角](docs/shots/cabin.jpg)
 <img width="1899" height="992" alt="image" src="https://github.com/user-attachments/assets/74ed37bb-439a-42d2-9fec-4a684986a4a2" />
 
+
+https://github.com/user-attachments/assets/e0b7f952-8d4d-4860-a3ee-e7dea98737df
+
+
 用眼睛開卡車的 **3D 寫實駕駛遊戲**（Godot 4.7）：坐在駕駛座裡跑遍台灣，小柯機器人陪你學開車。
 
 - **看邊緣轉頭**：眼睛看畫面左右邊緣，頭就轉過去看後照鏡；看回中間就回正。
