@@ -47,16 +47,25 @@ func _ready() -> void:
 		settings.auto_eyemouse = false
 		if args.has("eye"):
 			settings.control = "eye"
-	if OS.has_feature("web") or OS.has_feature("mobile"):
+	if OS.has_feature("web") or is_mobile():
 		settings.auto_eyemouse = false
-	if OS.has_feature("mobile"):
+	if is_mobile():
 		settings.quality = "low"
 		settings.control = "eye"   # 手機沒有鍵盤：用畫面上的油門、煞車、方向鍵開車
+		var df := FileAccess.open("user://diag.txt", FileAccess.WRITE)   # 手機除錯用：系統名稱與標籤
+		if df:
+			df.store_string("%s mobile=%s ios=%s control=%s safe=%s win=%s" % [OS.get_name(), OS.has_feature("mobile"), OS.has_feature("ios"),
+				settings.control, DisplayServer.get_display_safe_area(), DisplayServer.window_get_size()])
+
+
+## 手機／平板（Godot 4.7 的 iOS 不一定有 "mobile" 標籤，所以也看系統名稱）
+static func is_mobile() -> bool:
+	return OS.has_feature("mobile") or OS.has_feature("ios") or OS.has_feature("android") or OS.get_name() in ["iOS", "Android"]
 
 
 ## 手機瀏海／圓角的安全邊界（視窗座標，左上右下）；電腦與網頁都是 0
 func safe_margins(vp: Vector2) -> Vector4:
-	if not OS.has_feature("mobile"):
+	if not is_mobile():
 		return Vector4.ZERO
 	var win := Vector2(DisplayServer.window_get_size())
 	var safe := Rect2(DisplayServer.get_display_safe_area())
@@ -108,6 +117,6 @@ func stars(lesson_id: String) -> int:
 
 func set_fullscreen(on: bool) -> void:
 	settings.fullscreen = on
-	if OS.has_feature("web") or OS.has_feature("mobile"):
+	if OS.has_feature("web") or is_mobile():
 		return
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if on else DisplayServer.WINDOW_MODE_MAXIMIZED)

@@ -36,8 +36,8 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	set_process_input(true)
 	# 手機、平板、觸控螢幕：一開始就當觸控模式，避免滑鼠預設位置（左上角）誤觸求助鈕
-	touch_mode = OS.has_feature("mobile") or (OS.has_feature("web") and DisplayServer.is_touchscreen_available())
-	if OS.get_cmdline_user_args().has("--no-link") or OS.get_cmdline_user_args().has("--test") or OS.has_feature("web") or OS.has_feature("mobile"):
+	touch_mode = App.is_mobile() or (OS.has_feature("web") and DisplayServer.is_touchscreen_available())
+	if OS.get_cmdline_user_args().has("--no-link") or OS.get_cmdline_user_args().has("--test") or OS.has_feature("web") or App.is_mobile():
 		return
 	_try_connect()
 
@@ -205,7 +205,7 @@ func _process(delta: float) -> void:
 
 
 func status_text() -> String:
-	if OS.has_feature("mobile"):
+	if App.is_mobile():
 		if OS.get_name() == "Android":
 			return "觸控操作：按住畫面下方的油門、煞車、左右鍵開車"
 		return "觸控操作；iPad 可用「輔助使用 › 眼動追蹤」看著停留"
