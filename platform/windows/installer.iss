@@ -3,7 +3,7 @@
 ; 安裝到使用者資料夾，不需系統管理員權限；程式內更新會用 /SILENT 覆蓋安裝並自動重開。
 
 #ifndef AppVersion
-  #define AppVersion "1.0.0"
+  #define AppVersion "1.0.1"
 #endif
 #define AppName "眼動鼠之寶島卡車"
 #define AppExe "EyeMouseTruck.exe"

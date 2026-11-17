@@ -1,7 +1,7 @@
 extends Node
 ## 全域：版本、設定、進度（駕訓成績）、測試參數。
 
-const APP_VERSION := "1.0.0"
+const APP_VERSION := "1.0.1"
 const APP_NAME := "眼動鼠之寶島卡車"
 const SHORT_NAME := "眼動卡車"
 const CREDIT := "系統開發：吳玉柱 先生 與 Claude AI Opus 5.5"
