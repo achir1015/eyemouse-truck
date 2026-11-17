@@ -45,10 +45,19 @@ func _clear() -> Control:
 		tut = null
 	screen = Control.new()
 	screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var m := App.safe_margins(get_viewport().get_visible_rect().size)
+	screen.offset_left = m.x
+	screen.offset_top = m.y
+	screen.offset_right = -m.z
+	screen.offset_bottom = -m.w
 	screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ui.add_child(screen)
 	bg = Control.new()
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	bg.offset_left = -m.x
+	bg.offset_top = -m.y
+	bg.offset_right = m.z
+	bg.offset_bottom = m.w
 	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bg.draw.connect(_draw_bg)
 	screen.add_child(bg)
@@ -56,11 +65,13 @@ func _clear() -> Control:
 
 
 func _vs() -> Vector2:
-	return get_viewport().get_visible_rect().size
+	var vp := get_viewport().get_visible_rect().size
+	var m := App.safe_margins(vp)
+	return vp - Vector2(m.x + m.z, m.y + m.w)
 
 
 func _draw_bg() -> void:
-	var vs := _vs()
+	var vs := bg.size
 	for k in 24:
 		var t := k / 23.0
 		bg.draw_rect(Rect2(0, vs.y * t, vs.x, vs.y / 23.0 + 1), Color(0.05, 0.09, 0.18).lerp(Color(0.12, 0.28, 0.42), t))

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>安裝眼動鼠之寶島卡車（iPhone／iPad）</title>
+<meta name="theme-color" content="#16243F">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>
+  :root { --bg: #16243F; --card: #141a33; --fg: #f2f4ff; --dim: #a9b0cf; --accent: #ff8a1f; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: radial-gradient(circle at 50% 0, #2E4A7A, var(--bg) 70%); color: var(--fg); min-height: 100vh;
+    font: 17px/1.6 -apple-system, "PingFang TC", "Noto Sans TC", sans-serif; }
+  main { max-width: 560px; margin: 0 auto; padding: 24px 16px 56px; text-align: center; }
+  .head { display: flex; align-items: center; justify-content: center; gap: 16px; text-align: left; }
+  img.icon { width: 88px; height: 88px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.45); }
+  h1 { margin: 0; font-size: 24px; }
+  .ver { color: var(--accent); margin: 0; font-weight: 700; }
+  a.btn { display: block; margin-top: 24px; padding: 22px 16px; border-radius: 14px; background: var(--accent); color: #1a0f02; font-size: 24px; font-weight: 800; text-decoration: none; box-shadow: 0 5px 0 #a3520c; }
+  a.btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #a3520c; }
+  a.sub { display: inline-block; margin-top: 14px; color: var(--dim); }
+  .card { margin-top: 28px; padding: 18px 20px; background: var(--card); border-radius: 14px; text-align: left; }
+  .card h2 { margin: 0 0 8px; font-size: 18px; }
+  .card ol { margin: 0; padding-left: 22px; color: var(--dim); }
+  .qr { margin-top: 26px; color: var(--dim); font-size: 15px; }
+  .qr img { width: 180px; height: 180px; background: #fff; border-radius: 12px; padding: 6px; display: block; margin: 8px auto; }
+</style>
+</head>
+<body>
+<main>
+  <div class="head">
+    <img class="icon" src="icon-180.png" alt="">
+    <div><h1>眼動鼠之寶島卡車</h1><p class="ver" id="ver">iPhone／iPad 版</p></div>
+  </div>
+  <a class="btn" href="itms-services://?action=download-manifest&amp;url=https://achir1015.github.io/eyemouse-truck/ios/manifest.plist">安裝到這台裝置</a>
+  <a class="sub" href="../">← 回下載首頁（其他平台、線上版）</a>
+  <div class="card">
+    <h2>安裝步驟</h2>
+    <ol>
+      <li>請用 <b>Safari</b> 開啟本頁，按上方「安裝到這台裝置」。</li>
+      <li>出現「要安裝『眼動卡車』嗎？」時按「安裝」，回到主畫面等圖示下載完成。</li>
+      <li>更新時再按一次安裝即可覆蓋，駕訓班進度與設定會保留。</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h2>注意</h2>
+    <ol>
+      <li>目前為 Ad Hoc 版本，只能安裝在開發者帳號登記過的 iPhone／iPad。</li>
+      <li>其他裝置可以改用 <a href="../online/" style="color:#7fffd4">線上版</a>（請橫放手機）。</li>
+      <li>請橫放使用。iPad（iPadOS 18 以上）可以開「設定 › 輔助使用 › 眼動追蹤」，用眼睛看著停留就能選。</li>
+      <li>要在靜音模式下也能出聲，程式已設定為「播放」聲音類別；請把音量調大。</li>
+    </ol>
+  </div>
+  <div class="qr">用 iPhone 相機掃描開啟本頁<img src="qr.png" alt="安裝頁 QR Code"></div>
+</main>
+<script>
+fetch("../version.json?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (v) {
+  document.getElementById("ver").textContent = "iPhone／iPad 版 v" + v.version;
+}).catch(function () {});
+</script>
+</body>
+</html>

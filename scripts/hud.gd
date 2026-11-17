@@ -33,6 +33,7 @@ func setup(drive: Node) -> void:
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(root)
+	_apply_safe()
 	d.message.connect(_on_msg)
 	_build()
 	get_viewport().size_changed.connect(_layout)
@@ -134,8 +135,19 @@ func _build() -> void:
 			buttons[s[0]] = hb
 
 
+func _apply_safe() -> void:
+	var m := App.safe_margins(root.get_viewport_rect().size)
+	root.offset_left = m.x
+	root.offset_top = m.y
+	root.offset_right = -m.z
+	root.offset_bottom = -m.w
+
+
 func _layout() -> void:
-	var vs := root.get_viewport_rect().size
+	_apply_safe()
+	var vp := root.get_viewport_rect().size
+	var m := App.safe_margins(vp)
+	var vs := vp - Vector2(m.x + m.z, m.y + m.w)
 	msg_box.position = Vector2(14, 14)
 	msg_box.size = Vector2(540, 86)
 	score_label.position = Vector2(vs.x - 250, 14)

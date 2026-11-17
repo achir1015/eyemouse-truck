@@ -53,6 +53,18 @@ func _ready() -> void:
 		settings.quality = "low"
 
 
+## 手機瀏海／圓角的安全邊界（視窗座標，左上右下）；電腦與網頁都是 0
+func safe_margins(vp: Vector2) -> Vector4:
+	if not OS.has_feature("mobile"):
+		return Vector4.ZERO
+	var win := Vector2(DisplayServer.window_get_size())
+	var safe := Rect2(DisplayServer.get_display_safe_area())
+	if win.x < 10 or safe.size.x < 10:
+		return Vector4.ZERO
+	var k := vp / win
+	return Vector4(safe.position.x * k.x, safe.position.y * k.y, (win.x - safe.end.x) * k.x, (win.y - safe.end.y) * k.y)
+
+
 func arg(key: String, def := "") -> String:
 	return str(args.get(key, def))
 
