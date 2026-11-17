@@ -596,6 +596,16 @@ func _drive_tutorial() -> void:
 func _run_test() -> void:
 	var scr := App.arg("screen", "selftest")
 	await get_tree().process_frame
+	if App.args.has("auto-update"):
+		# 測試程式內更新：等同在「檢查更新」畫面按「立即更新」（可搭配 --fake-version=舊版）
+		show_update()
+		var r: Array = await Updater.checked
+		print("UPDATE current=%s latest=%s has=%s" % [Updater.current_version(), r[1], r[0]])
+		if r[0]:
+			Updater.progress.connect(func(x, t): print("UPDATE ", t))
+			Updater.failed.connect(func(m): print("UPDATE FAIL ", m); get_tree().quit(1))
+			Updater.apply_update()
+		return
 	match scr:
 		"title": show_title()
 		"free": show_free()
