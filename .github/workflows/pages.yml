@@ -1,0 +1,44 @@
+name: 部署網站（下載首頁＋線上版）
+
+# 線上版（Godot Web 匯出）放在最新 Release 的 EyeMouseTruck-web.zip，部署時解壓到 /online/
+# 發佈新 Release 後要手動觸發一次（workflow_dispatch）：Release 事件跑在標籤上，會被 github-pages 環境的分支規則擋下
+on:
+  push:
+    branches: [main]
+    paths: ['docs/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 組合網站：docs ＋ online（線上版）
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p _site
+          cp -R docs/. _site/
+          rm -f _site/.gdignore
+          if gh release download --repo "${{ github.repository }}" --pattern EyeMouseTruck-web.zip --dir /tmp; then
+            mkdir -p _site/online
+            unzip -q /tmp/EyeMouseTruck-web.zip -d _site/online
+          fi
+          du -sh _site; ls _site _site/online || true
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: _site }
+      - id: deployment
+        uses: actions/deploy-pages@v4

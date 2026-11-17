@@ -162,6 +162,8 @@ func show_title() -> void:
 		["關於", Color(0.3, 0.3, 0.38), show_about, ""],
 		["離開", Color(0.55, 0.22, 0.22), _quit, ""],
 	]
+	if OS.has_feature("web"):
+		items.pop_back()   # 瀏覽器裡不能關閉程式
 	var btns := _grid(items, 140, 3, 108, 330)
 	for b in btns:
 		b.set_meta("menu", b.text)
