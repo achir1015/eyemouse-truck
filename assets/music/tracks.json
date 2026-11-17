@@ -1,0 +1,122 @@
+[
+ {
+  "file": "track01.ogg",
+  "title": "信義路霓虹巡航",
+  "style": "City Pop 城市流行",
+  "seconds": 216.83
+ },
+ {
+  "file": "track02.ogg",
+  "title": "永康街午後咖啡",
+  "style": "Lo-fi 輕鬆節拍",
+  "seconds": 212.73
+ },
+ {
+  "file": "track03.ogg",
+  "title": "北海岸逆風而行",
+  "style": "抒情搖滾 Soft Rock",
+  "seconds": 218.67
+ },
+ {
+  "file": "track04.ogg",
+  "title": "淡水河畔晚霞",
+  "style": "柔順爵士 Smooth Jazz",
+  "seconds": 217.97
+ },
+ {
+  "file": "track05.ogg",
+  "title": "國道一號午夜",
+  "style": "合成器浪潮 夜駛 Synthwave",
+  "seconds": 210.56
+ },
+ {
+  "file": "track06.ogg",
+  "title": "花東縱谷微風",
+  "style": "木吉他民謠 Acoustic Folk",
+  "seconds": 212.2
+ },
+ {
+  "file": "track07.ogg",
+  "title": "墾丁海岸線",
+  "style": "巴薩諾瓦 Bossa Nova",
+  "seconds": 214.41
+ },
+ {
+  "file": "track08.ogg",
+  "title": "西門町週末放克",
+  "style": "放克 Funk",
+  "seconds": 217.79
+ },
+ {
+  "file": "track09.ogg",
+  "title": "合歡山雲海",
+  "style": "山嵐氛圍 Ambient",
+  "seconds": 222.93
+ },
+ {
+  "file": "track10.ogg",
+  "title": "蘇花公路晴天",
+  "style": "公路流行 Upbeat Pop",
+  "seconds": 216.83
+ },
+ {
+  "file": "track11.ogg",
+  "title": "九份雨巷",
+  "style": "雨天鋼琴 Rainy Piano",
+  "seconds": 211.07
+ },
+ {
+  "file": "track12.ogg",
+  "title": "稻浪田埂",
+  "style": "台灣民謠風 五聲音階",
+  "seconds": 210.77
+ },
+ {
+  "file": "track13.ogg",
+  "title": "綠島海風",
+  "style": "雷鬼 Reggae",
+  "seconds": 218.24
+ },
+ {
+  "file": "track14.ogg",
+  "title": "台九線牛仔晨光",
+  "style": "鄉村 Country",
+  "seconds": 211.5
+ },
+ {
+  "file": "track15.ogg",
+  "title": "港都夜行",
+  "style": "電子浩室 House",
+  "seconds": 215.96
+ },
+ {
+  "file": "track16.ogg",
+  "title": "台南老街藍調",
+  "style": "藍調搖擺 Blues Shuffle",
+  "seconds": 213.5
+ },
+ {
+  "file": "track17.ogg",
+  "title": "阿里山日出",
+  "style": "管弦日出 Orchestral",
+  "seconds": 220.64
+ },
+ {
+  "file": "track18.ogg",
+  "title": "夜市彈珠台",
+  "style": "復古晶片 Chiptune",
+  "seconds": 216.07
+ },
+ {
+  "file": "track19.ogg",
+  "title": "澎湖跨海大橋",
+  "style": "拉丁 Latin",
+  "seconds": 215.81
+ },
+ {
+  "file": "track20.ogg",
+  "title": "日月潭晨光",
+  "style": "寧靜古典 Calm Classical",
+  "seconds": 216.83
+ }
+]

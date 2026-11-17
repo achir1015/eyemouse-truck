@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#FFF4E2"/>
+      <stop offset="1" stop-color="#FFD9A8"/>
+    </radialGradient>
+    <radialGradient id="face" cx="45%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#F3F0FF"/>
+      <stop offset="1" stop-color="#D6D0F2"/>
+    </radialGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="110" fill="url(#bg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="110" fill="none" stroke="#F2A65A" stroke-width="10"/>
+  <!-- 耳朵 -->
+  <circle cx="128" cy="168" r="78" fill="#D6D0F2" stroke="#7C70B8" stroke-width="12"/>
+  <circle cx="128" cy="168" r="46" fill="#FFB3CF"/>
+  <circle cx="340" cy="168" r="78" fill="#D6D0F2" stroke="#7C70B8" stroke-width="12"/>
+  <circle cx="340" cy="168" r="46" fill="#FFB3CF"/>
+  <!-- 臉 -->
+  <ellipse cx="234" cy="282" rx="150" ry="140" fill="url(#face)" stroke="#7C70B8" stroke-width="12"/>
+  <!-- 眼睛 -->
+  <ellipse cx="180" cy="262" rx="40" ry="48" fill="#2F2849"/>
+  <ellipse cx="180" cy="262" rx="32" ry="40" fill="#fff"/>
+  <ellipse cx="182" cy="266" rx="24" ry="30" fill="#6D5DEB"/>
+  <circle cx="182" cy="268" r="13" fill="#2F2849"/>
+  <circle cx="170" cy="250" r="9" fill="#fff"/>
+  <ellipse cx="290" cy="262" rx="40" ry="48" fill="#2F2849"/>
+  <ellipse cx="290" cy="262" rx="32" ry="40" fill="#fff"/>
+  <ellipse cx="292" cy="266" rx="24" ry="30" fill="#6D5DEB"/>
+  <circle cx="292" cy="268" r="13" fill="#2F2849"/>
+  <circle cx="280" cy="250" r="9" fill="#fff"/>
+  <!-- 鼻子、嘴巴、腮紅 -->
+  <ellipse cx="235" cy="320" rx="20" ry="14" fill="#FF7EA6"/>
+  <path d="M208 344 q13 16 27 0 q14 16 27 0" fill="none" stroke="#5A3F6E" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="128" cy="320" rx="28" ry="16" fill="#FFC2D6" opacity="0.9"/>
+  <ellipse cx="342" cy="320" rx="28" ry="16" fill="#FFC2D6" opacity="0.9"/>
+  <!-- 寶島卡車徽章：聯結車＋道路 -->
+  <g transform="translate(250 318)">
+    <rect x="0" y="0" width="240" height="160" rx="30" fill="#1F6FD1" stroke="#fff" stroke-width="10"/>
+    <rect x="14" y="118" width="212" height="22" rx="6" fill="#3B3F4A"/>
+    <rect x="40" y="126" width="26" height="6" fill="#FFD23F"/>
+    <rect x="100" y="126" width="26" height="6" fill="#FFD23F"/>
+    <rect x="160" y="126" width="26" height="6" fill="#FFD23F"/>
+    <rect x="22" y="36" width="128" height="72" rx="8" fill="#FFFFFF"/>
+    <rect x="22" y="58" width="128" height="14" fill="#2FB380"/>
+    <path d="M156 52 h34 l24 26 v30 h-58 z" fill="#FF8A3D"/>
+    <path d="M166 60 h22 l14 16 h-36 z" fill="#CDE9FF"/>
+    <circle cx="52" cy="112" r="14" fill="#22252C" stroke="#fff" stroke-width="5"/>
+    <circle cx="112" cy="112" r="14" fill="#22252C" stroke="#fff" stroke-width="5"/>
+    <circle cx="190" cy="112" r="14" fill="#22252C" stroke="#fff" stroke-width="5"/>
+  </g>
+</svg>

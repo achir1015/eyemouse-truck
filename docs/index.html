@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>眼動鼠之寶島卡車</title>
+<link rel="icon" href="icon.png">
+<style>
+  :root { --bg:#16243F; --card:#1f3157; --text:#EAF2FF; --dim:#9DB2D6; --accent:#FFC53D; --ok:#2FB380; }
+  body { margin:0; font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+  main { max-width:960px; margin:0 auto; padding:32px 16px 64px; }
+  header { display:flex; gap:20px; align-items:center; }
+  header img { width:112px; height:112px; }
+  h1 { margin:0; font-size:2rem; }
+  .lead { color:var(--dim); margin:4px 0 0; }
+  .btns { display:flex; flex-wrap:wrap; gap:12px; margin:28px 0; }
+  .btn { display:inline-block; padding:14px 22px; border-radius:14px; background:var(--ok); color:#fff; text-decoration:none; font-weight:700; font-size:1.1rem; }
+  .btn.alt { background:#3B6FD8; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px; margin-bottom:24px; }
+  .shots img { width:100%; border-radius:12px; display:block; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  .card { background:var(--card); border-radius:16px; padding:16px 18px; }
+  .card b { color:var(--accent); }
+  footer { margin-top:40px; color:var(--dim); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="">
+    <div>
+      <h1>眼動鼠之寶島卡車</h1>
+      <p class="lead">用眼睛開卡車：坐在寫實駕駛座裡，跑遍台北、高雄、日月潭、太魯閣、墾丁與國道，小柯機器人陪你學開車。</p>
+    </div>
+  </header>
+  <div class="btns">
+    <a class="btn" href="https://github.com/achir1015/eyemouse-truck/releases/latest/download/EyeMouseTruck-Setup.exe">下載 Windows 安裝程式</a>
+    <a class="btn alt" href="https://github.com/achir1015/eyemouse-truck/releases/latest/download/EyeMouseTruck-Windows-portable.zip">免安裝版（zip）</a>
+    <a class="btn alt" href="https://github.com/achir1015/eyemouse-truck/releases">所有版本</a>
+  </div>
+  <div class="shots">
+    <img src="shots/cabin.jpg" alt="駕駛座視角">
+    <img src="shots/chase.jpg" alt="車外視角">
+    <img src="shots/street.jpg" alt="交通標誌辨識">
+  </div>
+  <div class="grid">
+    <div class="card"><b>看邊緣轉頭</b><br>眼睛看畫面左右邊緣，頭就轉過去看後照鏡與窗外；看回中間就回正。</div>
+    <div class="card"><b>寫實駕駛座</b><br>曲面儀表板、儀表、方向盤、雨刷與後照鏡；平板導航會用語音報路。</div>
+    <div class="card"><b>台灣 7 張地圖</b><br>台北市區、國道、日月潭、高雄、太魯閣、墾丁與駕訓班場地。</div>
+    <div class="card"><b>交通標誌辨識</b><br>小柯看到標誌會說出名稱與意思，幫你記住交通規則。</div>
+    <div class="card"><b>駕訓班 10 課</b><br>起步、轉彎、倒車入庫、路邊停車……語音一步一步教。</div>
+    <div class="card"><b>10 種考驗</b><br>下雨、夜間、高速公路、寒流起霧、颱風、塞車、事故、救護車、機車鑽車陣。</div>
+    <div class="card"><b>小柯自駕</b><br>累了就交給小柯機器人開，自動跟車、停紅燈、轉彎到目的地。</div>
+    <div class="card"><b>車內音樂與更新</b><br>20 首原創車內音樂；程式內一鍵更新到新版。</div>
+  </div>
+  <p>搭配 <a style="color:var(--accent)" href="https://github.com/achir1015/eyemouse">眼動鼠</a>（Tobii 眼動儀或攝影機）使用最好；沒有眼動鼠時也可以用滑鼠、鍵盤操作。</p>
+  <p>建議使用有獨立顯示卡的電腦；內建顯示卡可在設定裡把畫質調成「低」。</p>
+  <footer>系統開發：吳玉柱 先生 與 Claude AI Opus 5.5 ・ 天空、材質與部分道具：Poly Haven（CC0）・ 車輛模型以 NVIDIA TRELLIS 產生</footer>
+</main>
+</body>
+</html>

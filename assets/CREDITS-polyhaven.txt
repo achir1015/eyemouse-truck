@@ -1,0 +1,15 @@
+天空與材質來自 Poly Haven（https://polyhaven.com），CC0 公眾領域授權：
+kloofendal_48d_partly_cloudy_puresky
+kloofendal_43d_clear_puresky
+kloofendal_overcast_puresky
+kloofendal_misty_morning_puresky
+qwantani_dusk_2_puresky
+asphalt_02
+concrete_pavers
+leafy_grass
+rectangular_facade_tiles
+grey_plaster
+cliff_side
+painted_metal_shutter
+concrete
+coast_sand_rocks_02
